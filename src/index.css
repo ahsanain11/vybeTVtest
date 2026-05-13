@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #d0bcff;
+  --color-on-primary: #3c0091;
+  --color-primary-container: #a078ff;
+  --color-on-primary-container: #340080;
+  
+  --color-secondary: #4cd7f6;
+  --color-on-secondary: #003640;
+  --color-secondary-container: #03b5d3;
+  --color-on-secondary-container: #00424e;
+  
+  --color-tertiary: #ffb2b7;
+  --color-on-tertiary: #67001b;
+  --color-tertiary-container: #ff516a;
+  
+  --color-background: #131313;
+  --color-on-background: #e5e2e1;
+  
+  --color-surface: #131313;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #cbc3d7;
+  
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  
+  --color-outline: #958ea0;
+  --color-outline-variant: #494454;
+  
+  --radius-xl: 1.5rem;
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background antialiased;
+  }
+}
+
+.glass-panel {
+  @apply bg-surface-container-low/60 backdrop-blur-xl border border-white/10 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-primary-container to-secondary-container text-white px-8 py-3 rounded-full hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-105 transition-all duration-300 font-medium;
+}
+
+.btn-outline {
+  @apply border border-white/20 text-on-surface px-8 py-3 rounded-full hover:bg-white/5 transition-all duration-300 font-medium;
+}
